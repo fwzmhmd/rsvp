@@ -63,9 +63,13 @@ function createLi(text) {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const text = input.value;
-    input.value = '';
-    const li = createLi(text);
-    ul.appendChild(li);
+    if (text === '') {
+        alert('Please enter a name!');
+    } else {
+        input.value = '';
+        const li = createLi(text);
+        ul.appendChild(li);        
+    }
 });
 
 ul.addEventListener('change', (e) => {
